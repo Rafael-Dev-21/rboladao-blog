@@ -1,0 +1,6 @@
+[submodule "themes/green-gold"]
+	path = themes/green-gold
+	url = git@github.com:Rafael-Dev-21/green-gold-hugo-theme
+[submodule "themes/ananke"]
+	path = themes/ananke
+	url = https://github.com/theNewDynamic/gohugo-theme-ananke.git

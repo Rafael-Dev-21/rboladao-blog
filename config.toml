@@ -1,0 +1,30 @@
+baseURL = 'http://example.org/'
+languageCode = 'pt-br'
+title = 'Rayquaza Boladão'
+theme = 'ananke'
+
+[params]
+  commentoEnable = true
+
+[[params.ananke_socials]]
+  name = 'facebook'
+  url = 'https://facebook.com/rayquazaboladao'
+
+[[params.ananke_socials]]
+  name = 'instagram'
+  url = 'https://instagram.com/rayquaza_boladao'
+
+[[params.ananke_socials]]
+  name = 'youtube'
+  url = 'https://youtube.com/channel/UCxJf-i1jIPZMrB7sp6RWIHw'
+
+[[params.ananke_socials]]
+  name = 'github'
+  url = 'https://github.com/Rafael-Dev-21'
+
+[menu]
+[[menu.main]]
+  identifier = 'about'
+  name = 'Sobre'
+  url = '/sobre'
+  weight = 1
