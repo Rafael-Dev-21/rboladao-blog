@@ -22,6 +22,10 @@ theme = 'ananke'
   name = 'github'
   url = 'https://github.com/Rafael-Dev-21'
 
+[[params.ananke_socials]]
+  name = 'linkedin'
+  url = 'https://www.linkedin.com/in/victor-rafael-pereira-alves-2830ab226'
+
 [menu]
 [[menu.main]]
   identifier = 'about'
