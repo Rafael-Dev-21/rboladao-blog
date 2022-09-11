@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://rboladao.netlify.app/'
 languageCode = 'pt-br'
 title = 'Rayquaza Boladão'
 theme = 'ananke'
