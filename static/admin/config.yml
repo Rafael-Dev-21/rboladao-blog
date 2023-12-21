@@ -17,4 +17,5 @@ collections:
         - {label: "Categories", name: "categories", widget: "list"}
         - {label: "Tags", name: "tags", widget: "list"}
         - {label: "Description", name: "description", widget: "string"}
+        - {label: "Comments", name: "comments", widget: "boolean"}
         - {label: "Body", name: "body", widget: "markdown"}
