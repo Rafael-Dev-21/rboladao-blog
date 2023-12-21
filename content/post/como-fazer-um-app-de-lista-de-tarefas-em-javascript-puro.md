@@ -1,16 +1,19 @@
-+++
-audio = []
-author = "Victor Rafael Pereira Alves"
-categories = ["tutoriais/javascript"]
-date = 2022-07-04T03:00:00Z
-description = "Nesse artigo veremos como fazer um TODO list em Javascript"
-image = "/uploads/task.svg"
-tags = ["Tutorial", "TODO list", "Javascript"]
-title = "Como fazer um app de lista de tarefas em Javascript puro "
-video = []
-comments = true
-
-+++
+---
+author: Victor Rafael Pereira Alves
+date: 2022-07-04T03:00:00.000Z
+comments: true
+audio: []
+title: "Como fazer um app de lista de tarefas em Javascript puro "
+tags:
+  - Tutorial
+  - TODO list
+  - Javascript
+video: []
+image: /uploads/task.svg
+categories:
+  - tutoriais/javascript
+description: Nesse artigo veremos como fazer um TODO list em Javascript
+---
 Um dos primeiros programas gráficos que costumam ser recomendados para iniciantes de qualquer linguagem ou framework é a TODO list (lit. lista de tarefas), que é bem simples de fazer. Nesse artigo eu vou mostrar como fazer um em Javascript puro.
 
 ![Ícone de tarefa](/uploads/task.svg "Vamos lá")
@@ -158,6 +161,6 @@ O css é a parte mais complicada para algumas pessoas, então vou deixar ele int
 
 Veja o resultado final:
 
-[https://codepen.io/rafael-dev-21/pen/ExEVwmx](https://codepen.io/rafael-dev-21/pen/ExEVwmx)
+<https://codepen.io/rafael-dev-21/pen/ExEVwmx>
 
 Deixem um comentário com sugestões de apps.
