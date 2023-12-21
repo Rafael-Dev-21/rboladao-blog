@@ -1,0 +1,102 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, CHROME=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
+  {{ template "_internal/schema.html" . }}
+
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Page.Title }} | {{.Site.Title }}{{ end }}</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  {{ $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+  {{ $style := resources.Get "sass/manifest.scss" | resources.ToCSS $options }}
+  <link type="text/css" rel="stylesheet" href="{{ $style.Permalink }}">
+
+  {{ template "_internal/google_analytics.html" . }}
+
+  {{ "<!--[if lt IE 9]>" | safeHTML }}
+  <script src="/js/html5shiv.js"></script>
+  <script src="/js/respond.min.js"></script>
+  {{ "<![endif]-->" | safeHTML }}
+
+  {{ partial "googleTagManagerHead.html" . }}
+  {{ partial "googleTagManagerBody.html" . }}
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "{{ .Site.Title }}",
+      "url": "{{ .Site.BaseURL }}"
+    }
+  </script>
+
+  {{ if .IsPage }}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "{{ .Site.BaseURL }}",
+            "name": "home"
+          }
+    },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@id": "{{ .Permalink }}",
+            "name": "{{ .Title | humanize }}"
+          }
+    }]
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "author": {
+        "name": "{{ if .Params.author -}}{{ .Params.author }}{{- else if .Site.Author.name -}}{{ .Site.Author.name }}{{- end }}"
+      },
+      "headline": "{{ .Title }}",
+      "description": "{{ if .Description }}{{ .Description | plainify }}{{ else }}{{if .IsPage}}{{ .Summary | plainify  }}{{ end }}{{ end }}",
+      "inLanguage": "pt",
+      "wordCount": {{ .WordCount }},
+      "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05" }}",
+      "dateModified": "{{ .Date.Format "2006-01-02T15:04:05"  }}",
+      "image": "{{ .Site.Params.logo | absURL }}",
+      "keywords": ["{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}"],
+      "mainEntityOfPage": "{{ .Permalink }}",
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ .Site.BaseURL }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ .Site.Params.logo | absURL }}",
+          "height": 60,
+          "width": 60
+        }
+      }
+    }
+  </script>
+  {{ end }}
+
+
+  {{ if .IsHome }}
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  {{ end }}
+
+</head>

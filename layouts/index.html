@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+{{ if .Site.Params.description }}
+
+<article>
+  {{ .Site.Params.description | markdownify }}
+</article>
+
+{{ end }}
+
+<h2>Artigos</h2>
+
+{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ range (.Paginate $pages).Pages }}
+
+<article>
+  <h3>
+    <a href="{{ .Permalink }}">
+      {{ .Title }}
+    </a>
+  </h3>
+  <div>
+    <p>{{ .Params.description | default .Summary }}</p>
+  </div>
+  <footer>
+    <time>{{ .Date.Format "02 Jan 2006" }}</time>
+
+    {{ if .Params.tags }}
+
+    {{ range .Params.tags }}
+
+    <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+
+    {{ end }}
+
+    {{ end }}
+  </footer>
+</article>
+
+{{ end }}
+
+{{ end }}

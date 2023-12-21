@@ -1,0 +1,12 @@
+<header>
+  <a href="/"><h1>{{ .Site.Title }}</h1></a>
+  <nav>
+    {{ if .Site.Menus.main }}
+    {{ range .Site.Menus.main }}
+
+    <a href="{{ .URL }}">{{ .Name | safeHTML }}</a>
+
+    {{ end }}
+    {{ end }}
+  </nav>
+</header>

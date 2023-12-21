@@ -1,10 +1,11 @@
 baseURL = 'https://rboladao.netlify.app/'
 languageCode = 'pt-br'
 title = 'Rayquaza Boladão'
-theme = 'ananke'
+DisqusShortname = 'rboladao'
 
 [params]
   commentoEnable = true
+  DisqusShortname = 'rboladao'
 
 [[params.ananke_socials]]
   name = 'facebook'

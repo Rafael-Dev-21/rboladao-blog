@@ -1,0 +1,29 @@
+{{ define "main" }}
+{{ range .Pages.ByDate.Reverse }}
+
+<article>
+  <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+  <p>
+    {{ .Params.description | default .Summary }}
+    
+    {{ if .Truncated }}
+    <a href="{{ .Permalink }}">Ler mais...</a>
+    {{ end }}
+  </p>
+  <footer>
+    <time>{{ .Date.Format "02 Jan 2006" }}</time>
+
+    {{ if .Params.tags }}
+
+    {{ range .Params.tags }}
+
+    <a href="/tags/{{ . | urlize }}">#{{ . }}</a>
+
+    {{ end }}
+
+    {{ end }}
+  </footer>
+</article>
+
+{{ end }}
+{{ end }}

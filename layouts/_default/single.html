@@ -1,0 +1,32 @@
+{{ define "main" }}
+<article>
+  <header>
+    <h1>{{ .Title }}</h1>
+    <date>
+      {{ .Date.Format "02 Jan 2006" }}
+    </date>
+    <p>Escrito por <strong>{{ .Params.author }}</strong></p>
+    {{- partial "breadcrumb.html" . -}}
+  </header>
+  
+  <hr>
+  
+  <div class="conteudo">
+    {{ .Content }}
+  </div>
+  
+  <hr>
+  
+  <footer>
+    {{ range .Params.tags }}
+    <a href="/tags/{{ . | urlize }}">#{{ . | safeHTML }}</a>
+    {{ end }}
+    
+    {{ if .Params.comments }}
+    <div>
+      {{ template "_internal/disqus.html" . }}
+    </div>
+    {{ end }}
+  </footer>
+</article>
+{{ end }}

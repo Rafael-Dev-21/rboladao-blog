@@ -1,0 +1,31 @@
+body {
+  background-color: $green;
+  color: $white;
+}
+
+article {
+  background-color: $white;
+  color: $black;
+  width: columns(4.5);
+  margin: units(2) auto units(1);
+  padding: units(1);
+  border-radius: 5px;
+  
+  @include breakpoint(small) {
+    width: columns(4.5, small);
+    margin: units(2, small) auto units(1, small);
+    padding: units(1, small);
+  }
+  
+  pre, p {
+    margin: units(1) 0;
+  }
+  
+  img {
+    width: 100%;
+  }
+}
+
+hr {
+  border-bottom: dotted 1px $green;
+}
