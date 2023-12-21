@@ -5,7 +5,7 @@ DisqusShortname = 'rboladao'
 
 [params]
   commentoEnable = true
-  DisqusShortname = 'rboladao'
+  googleTagManager = 'GTM-W6K6WL8X'
 
 [[params.ananke_socials]]
   name = 'facebook'
